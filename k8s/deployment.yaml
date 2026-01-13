@@ -4,7 +4,7 @@ metadata:
   name: fastapi
   namespace: fastapi-app
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: fastapi
@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: fastapi-gitops:v1
+        image: fastapi-gitops:v2
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
